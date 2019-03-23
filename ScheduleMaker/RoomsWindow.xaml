@@ -1,0 +1,45 @@
+﻿<Window x:Class="ScheduleMaker.RoomsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScheduleMaker"
+        mc:Ignorable="d"
+        Title="RoomsWindow"
+        MaxWidth="800">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Left">
+            <ListBox 
+                DockPanel.Dock="Top" 
+                ItemsSource="{Binding Rooms}"
+                Width="100"
+                Height="400">
+            </ListBox>
+            <DockPanel DockPanel.Dock="Top" >
+                <Button DockPanel.Dock="Left" Height="25">Добавить</Button>
+                <Button DockPanel.Dock="Right" Height="25">Удалить</Button>
+            </DockPanel>
+        </DockPanel>
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <Label DockPanel.Dock="Left" Width="110">Краткое название</Label>
+                <TextBox DockPanel.Dock="Left"></TextBox>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <Label DockPanel.Dock="Left" Width="110">Название</Label>
+                <TextBox DockPanel.Dock="Left"></TextBox>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
+                <Button DockPanel.Dock="Left" Width="110">Сохранить</Button>
+                <Button DockPanel.Dock="Right" Width="110">Удалить</Button>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top" Height="Auto">
+                <Label DockPanel.Dock="Top">Добавить много аудиторий сразу</Label>
+                <TextBox DockPanel.Dock="Top" Height="300"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True"></TextBox>
+                <Button Width="110" Height="25" VerticalAlignment="Center">Добавить</Button>
+            </DockPanel>
+        </DockPanel>
+    </DockPanel>
+</Window>

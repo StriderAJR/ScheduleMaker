@@ -4,20 +4,31 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScheduleMaker"
-        mc:Ignorable="d"
         Title="MainWindow">
     <DockPanel>
         <Menu DockPanel.Dock ="Top" VerticalAlignment="Top">
             <MenuItem Header="Файл">
-                <MenuItem Header="Открыть" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Открыть"></MenuItem>
                 <MenuItem Header="Сохранить"></MenuItem>
             </MenuItem>
-            <MenuItem Header="Справочник"></MenuItem>
-            <MenuItem Header="Добавить группу" Click="MenuItem_Click_1"></MenuItem>
+            <MenuItem Header="Справочник">
+                <MenuItem Name="RoomsMenuItem" Header="Аудитории" Click="RoomsMenuItem_Click"></MenuItem>
+                <MenuItem Header="Преподаватели"></MenuItem>
+                <MenuItem Header="Расписание звонков"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Расписание">
+                <MenuItem Header="Добавить группу"></MenuItem>
+                <MenuItem Header="Добавить пару"></MenuItem>
+            </MenuItem>
+            
         </Menu>
         <ScrollViewer>
-            <DockPanel Name="ScheduleDockPanel" HorizontalAlignment="Left">
-            </DockPanel>
+            <!-- <DockPanel Name="ScheduleDockPanel" HorizontalAlignment="Left"> -->
+            <!-- </DockPanel> -->
+            <Canvas Name="ScheduleCanvas">
+
+            </Canvas>
         </ScrollViewer>
     </DockPanel>
 </Window>
+

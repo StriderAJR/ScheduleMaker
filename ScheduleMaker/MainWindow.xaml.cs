@@ -19,26 +19,29 @@ namespace ScheduleMaker
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
-        private Reference reference;
+        private Reference reference = new Reference();
 
         public MainWindow()
         {
             InitializeComponent();
 
-            reference = new Reference();
-            reference.Pairs = new List<string> {"Препод 1 - Пара 1", "Препод 1 - Пара 2", "Препод 2 - Пара 3"};
-
             DataContext = reference;
+            RefreshCanvas();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void RoomsMenuItem_Click(object sender, RoutedEventArgs e)
         {
-
+            RoomsWindow roomsWindow = new RoomsWindow(reference);
+            roomsWindow.Show();
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-            
+        private void RefreshCanvas() {
+            ScheduleCanvas.Children.Clear();
+
+            Label lbl = new Label();
+            lbl.Content = $"Создано {reference.Rooms.Count} аудиторий";
+
+            ScheduleCanvas.Children.Add(lbl);
         }
     }
 }
